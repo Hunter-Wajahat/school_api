@@ -8,7 +8,7 @@ async function adminAuthMiddleware(req, res, next) {
         
         if (!token) {
             res.json({message: "token not found!", status: 404})
-            return next()
+            return 404
         }
         
         const verified = await verifyCookie(token)
